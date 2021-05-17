@@ -10,8 +10,4 @@ const DetailScreen = (props) => {
   );
 }
 
-DetailScreen.propTypes = {};
-
-DetailScreen.defaultProps = {};
-
 export default DetailScreen;
