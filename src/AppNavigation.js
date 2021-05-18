@@ -21,7 +21,12 @@ const AppNavigation = (props) => {
             title: 'Contacts',
             headerTitleAlign: 'center'
           }}/>
-        <MainStack.Screen name={'DetailScreen'} component={DetailScreen}/>
+        <MainStack.Screen 
+          name={'DetailScreen'} 
+          component={DetailScreen}
+          options={{
+            headerTitle: ''
+          }}/>
       </MainStack.Navigator>
     </NavigationContainer>
   );

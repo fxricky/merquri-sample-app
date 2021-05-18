@@ -3,7 +3,9 @@ import * as type from '../type'
 
 const INIT_STATE = {
   data: null,
-  loading: false
+  payload: null,
+  loading: false,
+  saving: false
 }
 
 const reducer = (state = INIT_STATE, action) => {
@@ -14,6 +16,13 @@ const reducer = (state = INIT_STATE, action) => {
       return{...state, loading: false, data: action.data, error: null}
     case type.GET_DATA_FAILED:
       return{...state, loading: false, error: action.error, data: null}
+
+    case type.UPDATE_DATA:
+      return{...state, saving: true, error: null, payload: null}
+    case type.UPDATE_DATA_SUCCESS:
+      return{...state, saving: false, payload: action.payload}
+    case type.UPDATE_DATA_FAILED:
+      return{...state, saving: false, error: action.error}
     default: 
       return{...state}
   }
