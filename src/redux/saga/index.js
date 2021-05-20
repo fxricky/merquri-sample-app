@@ -30,8 +30,10 @@ function* updateDataSaga({payload}){
 
     yield put({type: type.GET_DATA_SUCCESS, data: cloneData})
     yield put({type: type.UPDATE_DATA_SUCCESS, payload: 'Update data successful.'})
+    alert('Data update successfully.')
   }catch(error){
     yield put({type: type.UPDATE_DATA_FAILED, error: error})
+    alert(error)
   }
 }
 

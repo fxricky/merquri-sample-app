@@ -34,18 +34,6 @@ const DetailScreen = (props) => {
     }
   }, [])
 
-  useEffect(() => {
-    if(props.payload){
-      alert(props.payload)
-    }
-  }, [props.payload])
-
-  useEffect(() => {
-    if(props.error){
-      alert(props.error)
-    }
-  }, [props.error])
-
   const renderCancelButton = () => {
     return(
       <TouchableOpacity 
